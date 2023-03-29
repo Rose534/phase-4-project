@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #b6a854;
+  color: #404040;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #e4e4e4;
+}
+
+
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+button[type="submit"] {
+  background-color: #b6a854;
+  color: #404040;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
