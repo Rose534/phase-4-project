@@ -13,6 +13,12 @@ function Category(){
                     <p>Fashion</p>
                 </div>
             </div>
+            <div id="sidebar2">
+                <h3>Best sellers</h3>
+                <div className="category-names">
+                    
+                </div>
+            </div>
         </div>
     )
 }

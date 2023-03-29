@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body{
   background-color: #f7cb71;
+}
+
+input:focus{
+  outline: none;
+  
 }
 
 .homeimage {
@@ -31,18 +37,21 @@ body{
 
 .menu-container {
   display: flex;
+  
 }
+
 
 .menu-item {
   margin: 0 10px;
   font-size: 18px;
   text-decoration: none;
-  color: white;
+  color: #000;
+  
 }
 
 .active {
   font-weight: bold;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 
 .logo-container img {
@@ -115,8 +124,25 @@ body{
   /* margin-left: 30px; */
 }
 
+#sidebar2 {
+  background-color:#f4b941;
+  width: 200px;
+  height: 500px;
+  padding: 20px;
+  margin-left: 1150px; 
+  margin-top: -500px;
+}
+
+#sidebar h3{
+  margin-top: 50px;
+}
+
+#sidebar2 h3{
+  margin-top: 50px;
+}
+
 .category-names {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .category-names p {
@@ -126,7 +152,7 @@ body{
 }
 
 .category-names p:hover {
-  background-color: #F5F5F5;
+  background-color: #f4b941;
 }
 
 #list{
@@ -137,12 +163,14 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
+  background-color: #daa334;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .details-header {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 h2 {
@@ -163,7 +191,7 @@ hr {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
 
 .form-group input {
@@ -175,7 +203,7 @@ hr {
 }
 
 h1 {
-  margin-bottom: 8px;
+  margin-bottom: 28px;
   font-size: 24px;
 }
 
@@ -184,10 +212,10 @@ h3 {
 }
 
 button {
-  margin-top: 16px;
+  margin-top: 26px;
   padding: 8px 16px;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #755920;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -195,11 +223,11 @@ button {
 }
 
 button:hover {
-  background-color: #0062cc;
+  background-color: #4e3c15;
 }
 
 .email-input {
-  margin-top: 16px;
+  margin-top: 26px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,4 +279,6 @@ button:hover {
   background-color: #755920;
 
 }
+
+
 

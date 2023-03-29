@@ -6,7 +6,7 @@ function NavBar() {
     <div>
     <div className="nav-bar blue">
       <div className="logo-container">
-        <img src="https://53525363.000webhostapp.com/Images/CLICKY-removebg-preview.png" alt="logo" />
+        <img src="https://53525363.000webhostapp.com/Images/CLICKY__1_-removebg-preview.png" alt="logo" />
       </div>
       <div className="menu-container">
         <NavLink to="/" className="menu-item" activeClassName="active">Home</NavLink>

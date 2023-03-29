@@ -13,10 +13,10 @@ function Account() {
 
   return (
     <div>
+      <div id="background">
     <div className="account-details">
       <h1>My Details</h1>
-
-      <div className="details-header">
+        <div className="details-header">
         <h2>Personal Details</h2>
         <hr />
       </div>
@@ -58,7 +58,7 @@ function Account() {
                </button>
             </div>
               <div>
-  
+              </div>
       </div>
       
     </div>
