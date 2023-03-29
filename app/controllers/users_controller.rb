@@ -31,6 +31,7 @@ class UsersController < ApplicationController
         app_response(message: 'success', status: :ok)
     end
 
+    
     private 
     
     def user_params
