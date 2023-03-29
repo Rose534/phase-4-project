@@ -1,6 +1,6 @@
-class ProductsController < ApplicationController
+class ProductController < ApplicationController
 
-    before_action :verify_auth
+    before_action :verify_auth, only: [:create, :update, :destroy]
 
     def create
         product = user.product.create(product_params)
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
 
     def index
         product = user.product.all
-        app_response(message: 'success', data: todos)
+        app_response(message: 'success', data: product)
     end
 
     private
