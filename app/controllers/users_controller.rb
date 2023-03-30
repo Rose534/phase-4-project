@@ -27,10 +27,6 @@ class UsersController < ApplicationController
         app_response(message: 'Logout successful')
     end
 
-    def check_login_status
-        app_response(message: 'success', status: :ok)
-    end
-
     
     private 
     
