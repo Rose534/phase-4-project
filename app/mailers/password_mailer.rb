@@ -10,6 +10,6 @@ class PasswordMailer < ApplicationMailer
     
     @token = @user.signed_id(purpose: 'password_reset', expires_in: 15.minutes)
     
-    mail to: @user.email_address
+    mail to: @user.email
   end 
 end

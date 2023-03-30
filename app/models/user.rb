@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :products
 
     validates :username, { 
-        length: { minimum: 5, maximum: 8 }, 
+        length: { minimum: 3, maximum: 8 }, 
         uniqueness: true,
         presence: true 
     } 
