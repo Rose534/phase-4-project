@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  #get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  get "/categories", to: "categories#index"
+  get "/product_categories", to: "product_categories#index"
+
   
     post '/users', to: 'users#register'
     post '/users/login', to: 'users#login'
@@ -21,3 +24,4 @@ Rails.application.routes.draw do
     get '/password/reset/edit', to: 'password_resets#edit'
     patch '/password/reset/edit', to: 'password_resets#update'
 end
+
