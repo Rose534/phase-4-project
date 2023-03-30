@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 function Signup() {
+  const[FirstName, setFirstName] = useState('');
+  const[LastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
