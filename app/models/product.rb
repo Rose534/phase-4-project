@@ -4,7 +4,7 @@ class Product < ApplicationRecord
    has_many :categories, through: :product_categories
 
     validates :name, {
-        length: { minimum: 3, maximum: 15 },
+        length: { minimum: 3, maximum: 30 },
         presence: true
       }
     

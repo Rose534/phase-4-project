@@ -20,12 +20,18 @@ class UsersController < ApplicationController
         else
             app_response(message: 'Invalid username/email or password', status: :unauthorized)
         end
+        
     end
 
     def logout
         remove_user
         app_response(message: 'Logout successful')
     end
+
+    def create_password_reset(attributes)
+  password_resets.create(attributes)
+end
+
 
     
     private 

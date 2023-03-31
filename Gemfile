@@ -19,14 +19,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt', '~> 2.7'
 
 # Use Active Storage variant
-#  gem 'image_processing', '~> 1.2'
+ gem 'image_processing', '~> 1.2'
 # gem 'thor', '~> 1.2', '>= 1.1.0'
-
+gem "faker"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+ gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
