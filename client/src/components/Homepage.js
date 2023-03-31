@@ -14,22 +14,14 @@ function Homepage() {
           <img src="https://53525363.000webhostapp.com/Images/Download_premium_png_of_Sofa_png_mockup_in_green_fabric_on_transparent_background_about_sofa__sofa_png__armchair__couch__and_furniture_3101307-removebg-preview.png" alt="" className="homeimage"/>
           
         </div>
-        
-        <div>
-
-        </div>
         <div id="box2"></div>
         <p id="join" >Join us for a day of fun, food, and fantastic sales. <br></br>Bring your best products and get ready to make some serious sales! Don't miss out on this amazing opportunity<br></br>to grow your business and reach a wider audience.</p>
 
         <p id="interest"> Interested in selling at our event? <br></br>Click the button below and secure your spot today. We can't wait to see you there!"</p>
         <button id="btn2">Sign up here!</button>
       </div>
-      {/* <h2 id="list">LIST OF ITEMS</h2> */}
-      <Category/>
       
-      <div>
-        
-      </div>
+      <Category/>
       </div>
     );
   }

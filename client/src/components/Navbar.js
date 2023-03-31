@@ -11,6 +11,7 @@ function NavBar() {
       <div className="menu-container">
         <NavLink to="/" className="menu-item" activeClassName="active">Home</NavLink>
         <NavLink to="/account" className="menu-item" activeClassName="active">Account</NavLink>
+        <span className="menu-item">Logout</span>
       </div>
     </div>
     <div id="secondiv">

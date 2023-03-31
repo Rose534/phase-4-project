@@ -16,7 +16,7 @@ class ProductController < ApplicationController
         if product
             app_response(data: { info: 'updated product successfully' })
         else
-            app_response(message: 'failed', data: { info: 'could not update product'}, status: :unprocessable_entity)
+            app_response(message: 'failed', data: { info: 'something went wrong. could not update product' }, status: :unprocessable_entity)
         end
     end
 
@@ -33,7 +33,7 @@ class ProductController < ApplicationController
     private
 
     def product_params
-        params.permit(:name, :description, :price, :image, :user_id)
+        params.permit(:name, :description, :price, :image)
     end
 
 end
