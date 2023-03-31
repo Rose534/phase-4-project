@@ -1,9 +1,15 @@
 class ProductController < ApplicationController
 
     before_action :verify_auth, only: [:create, :update, :destroy]
+     
+
+    def index
+        products = Product.all
+        app_response(message: 'success', data: products)
+    end
 
     def create
-        product = user.product.create(product_params)
+        product = Product.create(product_params)
         if product.valid?
             app_response(status: :created, data: product)
         else
@@ -12,23 +18,20 @@ class ProductController < ApplicationController
     end
     
     def update
-        product = user.product.find(params[:id]).update(product_params)
-        if product
-            app_response(data: { info: 'updated product successfully' })
+        product = current_user.products.find(params[:id])
+        if product.update(product_params)
+          app_response(data: { info: 'updated product successfully' })
         else
-            app_response(message: 'failed', data: { info: 'something went wrong. could not update product' }, status: :unprocessable_entity)
+          app_response(message: 'failed', data: { info: 'could not update product' }, status: :unprocessable_entity)
         end
-    end
+      end
 
     def destroy
         user.product.find(params[:id]).destroy
         app_response(message: 'success', data: { info: 'deleted product successfully' }, status: 204)
     end
 
-    def index
-        product = user.product.all
-        app_response(message: 'success', data: product)
-    end
+    
 
     private
 
