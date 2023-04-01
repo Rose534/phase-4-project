@@ -1,42 +1,41 @@
 class ProductController < ApplicationController
+    #  before_action :verify_auth
+    
 
-    before_action :verify_auth, only: [:create, :update, :destroy]
-     
+    def create
+      product = Product.new(product_params)
+      if product.save
+        app_response(data: product)
+      else
+        app_response(message: 'failed', status: 422, data: { info: product.errors.full_messages })
+      end
+    end
+
+    def update
+      product = Product.find(params[:id])
+      if product.update(product_params)
+        app_response(data: product)
+      else
+        app_response(message: 'failed', status: 422, data: { info: product.errors.full_messages })
+      end
+    end
+
+    def destroy
+      product = Product.find(params[:id])
+      product.destroy
+      app_response(data: product)
+    end
 
     def index
         products = Product.all
-        app_response(message: 'success', data: products)
+        app_response(data: products)
     end
-
-    def create
-        product = Product.create(product_params)
-        if product.valid?
-            app_response(status: :created, data: product)
-        else
-            app_response(status: :unprocessable_entity, data: product.errors, message: 'failed')
-        end
-    end
-    
-    def update
-        product = current_user.products.find(params[:id])
-        if product.update(product_params)
-          app_response(data: { info: 'updated product successfully' })
-        else
-            app_response(message: 'failed', data: { info: 'could not update product'}, status: :unprocessable_entity)
-        end
-      end
-
-    def destroy
-        user.product.find(params[:id]).destroy
-        app_response(message: 'success', data: { info: 'deleted product successfully' }, status: 204)
-    end
-
-    
 
     private
 
     def product_params
-        params.permit(:name, :description, :price, :image)
+      params.require(:product).permit(:name, :price, :description)
     end
 
-end
+ 
+  end

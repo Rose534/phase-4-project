@@ -1,30 +1,12 @@
 class PasswordResetsController < ApplicationController
-  def new
-  end
-
-  def create
-    if @user = User.find_by_email(params[:email])
-      PasswordMailer.with(user: @user).reset.deliver_later
-    end
-    redirect_to '/login', notice: 'we have sent a link to your email to reset password'
   
-  end
-
-  def edit
-    @user = User.find_signed!(params[:token], purpose: 'password_reset')
-  rescue ActiveSupport::MessageVerifier::InvalidSignature
-    redirect_to '/login', alert: 'Your token has expired. Please try again'
-  end
-
-  def update
-    @user = User.find_signed!(params[:token], purpose: 'password_reset')
-    if @user.update(password_params)
-      redirect_to '/login', notice: 'Your password was reset succesfully. Please sign in.'
+  def reset_password
+    user = User.find_by(username: params[:username])
+    if user.nil?
+      render json: { message: 'User not found' }, status: :not_found
     else
-      render 'edit'
+      user.update(password: params[:password])
+      render json: user, status: :created
     end
-    
-  rescue ActiveSupport::MessageVerifier::InvalidSignature
-    redirect_to '/login', alert: 'Your token has expired. Please try again'
   end
 end
