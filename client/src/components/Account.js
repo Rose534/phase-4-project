@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import NavBar from "./Navbar";
 
 function Account() {
   const [firstName, setFirstName] = useState('');
@@ -13,6 +13,7 @@ function Account() {
 
   return (
     <div>
+      <NavBar/>
       <div id="background">
     <div className="account-details">
       <h1>My Details</h1>

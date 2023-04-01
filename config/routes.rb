@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     put '/product/:id', to: 'product#update'
     delete '/product/:id', to: 'product#destroy'
     get '/product', to: 'product#index'
-
+    
     # reset password routes 
 
     get '/password/reset', to: 'password_resets#new'

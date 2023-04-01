@@ -22,7 +22,7 @@ class ProductController < ApplicationController
         if product.update(product_params)
           app_response(data: { info: 'updated product successfully' })
         else
-          app_response(message: 'failed', data: { info: 'could not update product' }, status: :unprocessable_entity)
+            app_response(message: 'failed', data: { info: 'could not update product'}, status: :unprocessable_entity)
         end
       end
 

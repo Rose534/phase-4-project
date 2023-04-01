@@ -79,7 +79,7 @@ class ApplicationController < ActionController::API
     end
 
     # get logged in user (session)
-    def user_session
+    def user_session 
         User.find(session[:uid].to_i) 
     end
 

@@ -1,8 +1,10 @@
 import Category from "./Category";
+import NavBar from "./Navbar";
 
 function Homepage() {
     return (
         <div>
+          <NavBar/>
       <div id="container">
         <div id="box1">
           <p id="welcome">Attention all seller!</p>

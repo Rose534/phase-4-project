@@ -1,40 +1,25 @@
+import React from 'react';
 import './App.css';
-import React,{useState} from 'react';
-import LoginPage from './Components/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Account from './components/Account';
-import Navbar from './components/Navbar';
-
+import Signup from './components/Signup';
+import LoginForm from './components/Login';
 
 function App() {
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  }
-
-  const[user,setUser] = useState({name: "", email: "" });
-  const[error, setError] = useState("");
-
-const Login = details => {
-  console.log(details);
-  }
-
-  const Logout = () => {
-    console.log ("Logout");
-  }
-  
   return (
     <Router>
       <div>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/homepage" element={<Homepage />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/" element={<Homepage />} />
         </Routes>
       </div>
     </Router>
   );
-  
 }
-export default App
+
+export default App;

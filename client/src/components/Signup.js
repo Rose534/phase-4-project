@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Signup() {
-  const[FirstName, setFirstName] = useState('');
-  const[LastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = (event) => {
+
+  const handleSignup = (event) => {
     event.preventDefault();
     console.log('Submitting', email, password);
-    
+    window.location.href = '/login'; 
   };
+
   return (
     <div>
       <h1>Signup</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSignup}>
+        <div>
+          <label htmlFor="firstName">First Name</label>
+          <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+        </div>
+        <div>
+          <label htmlFor="lastName">Last Name</label>
+          <input type="text" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+        </div>
         <div>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -23,8 +34,10 @@ function Signup() {
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
         <button type="submit">Signup</button>
+        <p>Already have an account? <Link to="/login">Login here</Link></p>
       </form>
     </div>
   );
 }
+
 export default Signup;

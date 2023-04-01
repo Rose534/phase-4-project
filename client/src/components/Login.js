@@ -1,26 +1,33 @@
 import React, { useState } from 'react';
 
-function Login() {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // TODO: handle login logic
+
+  const handleLogin = () => {
+    if (username === 'user' && password === 'password') {
+      window.location.href = '/homepage';
+    } else {
+      alert('Invalid credentials. Please try again.');
+    }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <h2>Login Form</h2>
+      <form>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+        <button type="button" onClick={handleLogin}>
+          Login
+        </button>
+      </form>
+    </div>
   );
 }
-export default Login;
+
+export default LoginForm;
