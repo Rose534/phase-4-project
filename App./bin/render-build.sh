@@ -19,4 +19,5 @@ set -o errexit
 bundle install
 
 # migrate
-bundle exec rake db:migrate db:seed  
+bundle exec rake db:migrate  
+bundle exec rake db:seed 
