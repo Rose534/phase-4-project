@@ -1,7 +1,8 @@
 import './App.css';
 import React,{useState} from 'react';
-import LoginPage from './Components/Login';
-
+import Login from './Components/Login';
+import Loginpage from './Components/Login';
+import Signup from './Components/Signup';
 function App() {
   const adminUser = {
     email: "admin@admin.com",
@@ -27,10 +28,13 @@ const Login = details => {
           <button>Logout</button>
         </div>
       ) : (
-        <LoginPage />
+        <Loginpage/>
+
         
       )}
     </div>
+
+   
   );
 }
 export default App
