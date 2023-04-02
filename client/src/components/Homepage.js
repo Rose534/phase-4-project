@@ -1,27 +1,10 @@
 import Category from "./Category";
 import NavBar from "./Navbar";
-import { useEffect, useState } from "react";
 
 function Homepage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch("http://localhost:3000/product");
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchProducts();
-  }, []);
-
-  return (
-    <div>
-      <NavBar />
+    return (
+        <div>
+          <NavBar/>
       <div id="container">
         <div id="box1">
           <p id="welcome">Attention all seller!</p>
@@ -41,19 +24,9 @@ function Homepage() {
       </div>
       
       <Category/>
-      <div id="api">
-        {/* display fetched products data */}
-        {products.map((product) => (
-          <div key={product.id}>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <img src={product.image} alt={product.name} />
-          </div>
-        ))}
       </div>
-    </div>
-  );
-}
-
-export default Homepage;
+    );
+  }
+  
+  export default Homepage;
   

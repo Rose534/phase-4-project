@@ -1,69 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from "./Navbar";
 
-function Account() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handleSave = () => {
-    
-    console.log('Saved!', firstName, lastName, phoneNumber);
+const Account = () => {
+  const [products, setProducts] = useState([]);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
+  
+
+  useEffect(() => {
+    fetch('http://localhost:3000/product')
+      .then(response => response.json())
+      .then(data => setProducts(data.data))
+      .catch(error => console.error(error));
+  }, []);
+
+  const handleHover = (productId) => {
+    setHoveredProductId(productId);
   };
 
+  const handleUpdate = (productId) => {
+    const updatedProduct = prompt('Enter the updated product name:');
+    if (updatedProduct) {
+      fetch(`http://localhost:3000/product/${productId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: updatedProduct })
+      })
+      .then(response => response.json())
+      .then(data => {
+       
+        const updatedProducts = products.map(product => {
+          if (product.id === productId) {
+            return data.data;
+          }
+          return product;
+        });
+        setProducts(updatedProducts);
+      })
+      .catch(error => console.error(error));
+    }
+  };
+  
+
+  const handleDelete = (productId) => {
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      fetch(`http://localhost:3000/product/${productId}`, {
+        method: 'DELETE'
+      })
+      .then(() => {
+        
+        const updatedProducts = products.filter(product => product.id !== productId);
+        setProducts(updatedProducts);
+      })
+      .catch(error => console.error(error));
+    }
+  };
+
+  
   return (
     <div>
       <NavBar/>
-      <div id="background">
-    <div className="account-details">
-      <h1>My Details</h1>
-        <div className="details-header">
-        <h2>Personal Details</h2>
-        <hr />
-      </div>
-
-      <div className="name-inputs">
-        <div className="form-group">
-          <h3>First Name</h3>
-          <input
-            type="text"
-            value={firstName}
-            onChange={(event) => setFirstName(event.target.value)}
-          />
-        </div>
-
-        <div className="form-group">
-          <h3>Last Name</h3>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="form-group">
-        <h3>Phone Number</h3>
-        <input
-          type="text" placeholder="Phone number"
-          value={phoneNumber}
-          onChange={(event) => setPhoneNumber(event.target.value)}
-        />
-            <div className="email-input">
-               <h3>Email Address</h3>
-                 <input type="email" placeholder="Email Address" required />
-                   </div>
-                       </div>
-           <button type="button" onClick={handleSave}>
-             Save
-               </button>
-            </div>
+      <h1>Products</h1>
+      <ul className="product-list">
+        {products.map(product => (
+          <li key={product.id} onMouseEnter={() => handleHover(product.id)} onMouseLeave={() => handleHover(null)}>
+            {product.image && <img src={product.image} alt={product.name} />}
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
+            <p>Price: ${product.price}</p>
+            {hoveredProductId === product.id && (
               <div>
+                <button onClick={() => handleUpdate(product.id)}>Update</button>
+                <button onClick={() => handleDelete(product.id)}>Delete</button>
               </div>
-      </div>
-      
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default Account;
