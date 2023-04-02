@@ -1,16 +1,31 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSignup = (event) => {
-    event.preventDefault();
-    console.log('Submitting', email, password);
-    window.location.href = '/login'; 
+  
+  const handleSignup = (e) => {
+    e.preventDefault();
+    fetch("/users", {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({username, email, password}),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        console.log(data);
+        
+        localStorage.setItem("token", data.token); 
+        navigate("/login", { replace: true }); 
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -18,19 +33,15 @@ function Signup() {
       <h1>Signup</h1>
       <form onSubmit={handleSignup}>
         <div>
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="firstName" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </div>
         <div>
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email:</label>
           <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:</label>
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
         <button type="submit">Signup</button>

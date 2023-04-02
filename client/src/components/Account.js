@@ -5,6 +5,13 @@ import NavBar from "./Navbar";
 const Account = () => {
   const [products, setProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    description: "",
+    price: "",
+    image: ""
+  });
   
 
   useEffect(() => {
@@ -13,6 +20,38 @@ const Account = () => {
       .then(data => setProducts(data.data))
       .catch(error => console.error(error));
   }, []);
+
+  const handleNewProductChange = (event) => {
+    const { name, value } = event.target;
+    setNewProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: value
+    }));
+  };
+
+  const handleNewProductSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:3000/product', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newProduct)
+    })
+      .then(response => response.json())
+      .then(data => {
+        setProducts([...products, data.data]);
+        setNewProduct({
+          name: "",
+          description: "",
+          price: "",
+          image: ""
+        });
+        setShowForm(false);
+      })
+      .catch(error => console.error(error));
+  };
+  
 
   const handleHover = (productId) => {
     setHoveredProductId(productId);
@@ -58,11 +97,33 @@ const Account = () => {
     }
   };
 
-  
   return (
-    <div>
+    <div id="account">
       <NavBar/>
-      <h1>Products</h1>
+      <h1 id="products">Products</h1>
+      <button class="add-product-btn" onClick={() => setShowForm(true)}>Add Product</button>
+{showForm && (
+  <form class="add-product-form" onSubmit={handleNewProductSubmit}>
+    <label>
+      Name:
+      <input type="text" name="name" value={newProduct.name} onChange={handleNewProductChange} />
+    </label>
+    <label>
+      Description:
+      <input type="text" name="description" value={newProduct.description} onChange={handleNewProductChange} />
+    </label>
+    <label>
+      Price:
+      <input type="text" name="price" value={newProduct.price} onChange={handleNewProductChange} />
+    </label>
+    <label>
+      Image:
+      <input type="text" name="image" value={newProduct.image} onChange={handleNewProductChange} />
+    </label>
+    <button class="add-product-submit-btn" type="submit">Add</button>
+  </form>
+)}
+
       <ul className="product-list">
         {products.map(product => (
           <li key={product.id} onMouseEnter={() => handleHover(product.id)} onMouseLeave={() => handleHover(null)}>
@@ -72,8 +133,8 @@ const Account = () => {
             <p>Price: ${product.price}</p>
             {hoveredProductId === product.id && (
               <div>
-                <button onClick={() => handleUpdate(product.id)}>Update</button>
-                <button onClick={() => handleDelete(product.id)}>Delete</button>
+                <button id="dltbtn" onClick={() => handleUpdate(product.id)}>Update</button>
+                <button id="crtbtn" onClick={() => handleDelete(product.id)}>Delete</button>
               </div>
             )}
           </li>
@@ -81,6 +142,7 @@ const Account = () => {
       </ul>
     </div>
   );
+  
 };
 
 export default Account;

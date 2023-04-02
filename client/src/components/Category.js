@@ -4,26 +4,28 @@ function Category() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('All');
 
+  let filteredProducts = products;
   useEffect(() => {
     fetch('http://localhost:3000/product_categories')
       .then(response => response.json())
-      .then(data => setProducts(data))
+      .then(data => {
+        
+        if (category !== 'All') {
+          data = data.filter(product => product.category === category);
+        }
+        setProducts(data);
+      })
       .catch(error => console.error(error));
-  }, []);
+  }, [category]);
 
   const handleCategoryClick = (categoryName) => {
     setCategory(categoryName);
   };
 
-  let filteredProducts = products;
-  if (category !== 'All') {
-    filteredProducts = products.filter(product => product.category === category);
-  }
-
-  const bestSellers = filteredProducts.slice(-2);
+  const bestSellers = products.slice(-2);
 
   return (
-    <div>
+    <div id="category">
       <div id="sidebar">
         <h3>Category</h3>
         <div className="category-names">

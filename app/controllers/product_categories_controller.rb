@@ -1,6 +1,7 @@
 class ProductCategoriesController < ApplicationController
     def index
-        productcategories = ProductCategory.all
-        render json: productcategories
+      products = Product.includes(:categories)
+      render json: products.as_json(include: :categories)
     end
-end
+  end
+  
