@@ -16,7 +16,7 @@ function NavBar() {
     })
     .then(() => {
       localStorage.removeItem("token");
-      navigate("/login", { replace: true }); 
+      navigate("/signup", { replace: true }); 
     })
     .catch((error) => {
       console.error(error);
@@ -30,7 +30,7 @@ function NavBar() {
           <img src="https://53525363.000webhostapp.com/Images/CLICKY__1_-removebg-preview.png" alt="logo" />
         </div>
         <div className="menu-container">
-          <NavLink to="/" className="menu-item" activeClassName="active">Home</NavLink>
+          <NavLink to="/homepage" className="menu-item" activeClassName="active">Home</NavLink>
           <NavLink to="/account" className="menu-item" activeClassName="active">Account</NavLink>
           <span className="menu-item" onClick={handleLogout}>Logout</span>
         </div>

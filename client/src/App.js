@@ -11,14 +11,16 @@ function App() {
   return (
     <Router>
       <div>
+      
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Signup />} />
           <Route path="/reset" element={<PasswordReset />} />
         </Routes>
+    
       </div>
     </Router>
   );

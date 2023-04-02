@@ -36,10 +36,10 @@ function Category() {
           <p onClick={() => handleCategoryClick('fashion')}>fashion</p>
         </div>
       </div>
-      <div id="sidebar2">
-  <h3>Best sellers</h3>
+      <div className="product-cards">
   {bestSellers.map(product => (
-    <div className="card2" key={product.id}>
+    <div className="card" key={product.id}>
+      <h3>Best sellers</h3>
       <img src={product.image} alt={product.name} />
       <h4>{product.name}</h4>
       <p>{product.description}</p>
@@ -48,7 +48,7 @@ function Category() {
   ))}
 </div>
 
-      <div className="product-cards">
+      {/* <div className="product-cards">
         {filteredProducts.map(product => (
           <div className="card" key={product.id}>
             <img src={product.image} alt={product.name} />
@@ -57,7 +57,7 @@ function Category() {
             <p>{product.price}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -29,19 +29,21 @@ function LoginForm() {
    
   };
   return (
-    <div>
-      <h2>Login Form</h2>
-      <form >
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required/>
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
-        <button type="submit" onClick={handleLogin}>
-          Login
-        </button>
-        <p>forgot password? click <Link to="/reset">here</Link></p>
-      </form>
-    </div>
+    <div className="login-form">
+  
+  <form className="login-form__form">
+    <h2 className="login-form__title">Login Form</h2>
+    <label htmlFor="username" className="login-form__label">Username:</label>
+    <input type="text" id="username" className="login-form__input" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+    <label htmlFor="password" className="login-form__label">Password:</label>
+    <input type="password" id="password" className="login-form__input" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+    <button type="submit" className="login-form__button" onClick={handleLogin}>
+      Login
+    </button>
+    <p className="login-form__forgot-password">forgot password? click <Link to="/reset" className="login-form__link">here</Link></p>
+  </form>
+</div>
+
   );
 }
 export default LoginForm;
