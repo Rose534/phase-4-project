@@ -9,19 +9,20 @@ function Signup() {
   
   const handleSignup = (e) => {
     e.preventDefault();
-    fetch("/users", {
+    fetch(`http://localhost:3000/users`, {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
       },
       body:JSON.stringify({username, email, password}),
     })
-     .then((r) => {
-  if (!r.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return r.json();
-})
+      .then((r) => r.json())
+      .then((data) => {
+        console.log(data);
+        
+        localStorage.setItem("token", data.token); 
+        navigate("/login", { replace: true }); 
+      })
       .catch((error) => {
         console.error(error);
       });

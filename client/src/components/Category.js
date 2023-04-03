@@ -6,7 +6,7 @@ function Category() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3000/product_categories')
+    fetch(`http://localhost:3000/product_categories`)
       .then(response => response.json())
       .then(data => {
         

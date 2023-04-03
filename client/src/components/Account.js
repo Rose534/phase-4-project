@@ -31,7 +31,7 @@ const Account = () => {
 
   const handleNewProductSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3000/product', {
+    fetch(`http://localhost:3000/product`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
