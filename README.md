@@ -59,6 +59,10 @@ To run the rails server, run
 
      rails s
 
+This backend is currently deployed to: 
+
+     https://clicky-h5gz.onrender.com/product
+
 # Frontend
 
 The front end to this repo is stored under `client` 
