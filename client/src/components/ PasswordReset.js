@@ -35,6 +35,7 @@ function PasswordReset() {
       });
   };
   return (
+    <div id="reset">
     <div class="reset-password-form">
     <h1 class="reset-password-form__title">Password Reset</h1>
     <form class="reset-password-form__form" onSubmit={handleResetPassword}>
@@ -49,6 +50,7 @@ function PasswordReset() {
       <button class="reset-password-form__button" type="submit">Reset Password</button>
     </form>
     {message && <p class="reset-password-form__message">{message}</p>}
+  </div>
   </div>
   
   );
