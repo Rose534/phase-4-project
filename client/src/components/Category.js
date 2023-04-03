@@ -22,7 +22,7 @@ function Category() {
     setCategory(categoryName);
   };
 
-  const bestSellers = products.slice(-2);
+  const bestSellers = products.slice(-3);
 
   return (
     <div id="category">

@@ -292,11 +292,12 @@ button:hover {
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px; 
+ 
 }
 
 .product-list li {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: 1rem;
   padding: 1rem;
@@ -305,8 +306,8 @@ button:hover {
 }
 
 .product-list li {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: 1rem;
   padding: 1rem;
@@ -371,8 +372,10 @@ ul.product-list {
 .card {
   width: 250px;
   height: 500px;
-  border: 1px solid #ccc;
+  border: none;
   margin-bottom: 20px;
+  background-color: 
+  #f5f5f5;
 }
 
 
@@ -386,9 +389,10 @@ ul.product-list {
 
 .card2 img {
   display: block;
-  max-width: 50%;
+  max-width: 100%;
   max-height: 50%;
   margin: auto;
+  
 }
 
 .card2 h4 {
