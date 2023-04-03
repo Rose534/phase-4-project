@@ -77,6 +77,10 @@ To run the server, run
 
 Then navigate to `http://localhost:4000` to view the website
 
+The front end is deployed in the below link:
+
+     https://phase-4-project-ten.vercel.app/
+
 
 # Authors
 
