@@ -9,7 +9,7 @@ function Signup() {
   
   const handleSignup = (e) => {
     e.preventDefault();
-    fetch("/users", {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"

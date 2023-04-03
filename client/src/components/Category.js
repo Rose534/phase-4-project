@@ -4,7 +4,7 @@ function Category() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('All');
 
-  let filteredProducts = products;
+
   useEffect(() => {
     fetch('http://localhost:3000/product_categories')
       .then(response => response.json())

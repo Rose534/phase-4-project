@@ -9,7 +9,7 @@ function PasswordReset() {
 
   const handleResetPassword = (e) => {
     e.preventDefault();
-    fetch(`/password/reset`, {
+    fetch(`http://localhost:3000/password/reset`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    fetch("/logout", {
+    fetch("http://localhost:3000/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
