@@ -30,7 +30,7 @@ function Signup() {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      navigate('/signup', { replace: true });
+      navigate('/login', { replace: true });
     }
   }, [navigate]);
 
