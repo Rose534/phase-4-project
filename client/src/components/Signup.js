@@ -9,7 +9,7 @@ function Signup() {
   
   const handleSignup = (e) => {
     e.preventDefault();
-    fetch(`/users`, {
+    fetch(`https://clicky-h5gz.onrender.com/users`, {
       method: "POST",
       headers: {
         "Content-Type":"application/json"

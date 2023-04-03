@@ -9,7 +9,7 @@ function PasswordReset() {
 
   const handleResetPassword = (e) => {
     e.preventDefault();
-    fetch(`/reset`, {
+    fetch(`https://clicky-h5gz.onrender.com/reset`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
