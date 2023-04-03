@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
@@ -28,30 +28,34 @@ function Signup() {
       });
   };
 
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      navigate('/login', { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <div id="sign">
-    <div className="signup-form">
-  
-  <form className="signup-form-container" onSubmit={handleSignup}>
-  <h1 className="signup-heading">Signup</h1>
-    <div className="signup-input-container">
-      <label className="signup-label" htmlFor="username">Username:</label>
-      <input className="signup-input" type="text" id="firstName" value={username} onChange={(e) => setUsername(e.target.value)} required />
+      <div className="signup-form">
+        <form className="signup-form-container" onSubmit={handleSignup}>
+          <h1 className="signup-heading">Signup</h1>
+          <div className="signup-input-container">
+            <label className="signup-label" htmlFor="username">Username:</label>
+            <input className="signup-input" type="text" id="firstName" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          </div>
+          <div className="signup-input-container">
+            <label className="signup-label" htmlFor="email">Email:</label>
+            <input className="signup-input" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+          <div className="signup-input-container">
+            <label className="signup-label" htmlFor="password">Password:</label>
+            <input className="signup-input" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+          <button className="signup-button" type="submit">Signup</button>
+          <p>Already have an account? <Link to="/login">Login here</Link></p>
+        </form>
+      </div>
     </div>
-    <div className="signup-input-container">
-      <label className="signup-label" htmlFor="email">Email:</label>
-      <input className="signup-input" type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-    </div>
-    <div className="signup-input-container">
-      <label className="signup-label" htmlFor="password">Password:</label>
-      <input className="signup-input" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-    </div>
-    <button className="signup-button" type="submit">Signup</button>
-    <p>Already have an account? <Link to="/login">Login here</Link></p>
-  </form>
-</div>
-</div>
-
   );
 }
 

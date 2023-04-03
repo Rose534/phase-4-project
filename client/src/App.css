@@ -160,10 +160,6 @@ input:focus{
   
 }
 
-.category-names p:hover {
-  background-color: #f4b941;
-}
-
 #list{
   text-align: center;
 }
