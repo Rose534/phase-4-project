@@ -168,6 +168,10 @@ input:focus{
   text-align: center;
 }
 
+#account{
+  background-color: #DBA63B;
+}
+
 .account-details {
   display: flex;
   flex-direction: column;
