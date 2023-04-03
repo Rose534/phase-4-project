@@ -292,6 +292,7 @@ button:hover {
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px; 
+  background-color: #DBA63B;
  
 }
 
@@ -356,6 +357,7 @@ ul.product-list {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -480px; 
+  background-color: #DBA63B;
 }
 
 .card {
