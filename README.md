@@ -69,8 +69,6 @@ To run the server, run
 
 Then navigate to `http://localhost:3000` to view the website
 
-This website however, has already been deployed to an external server, copy and paste this link onto your browser to view it
-
 To by pass the CORS error, download this CORS extension to your browser
 
          https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en

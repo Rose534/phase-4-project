@@ -16,13 +16,12 @@ function Signup() {
       },
       body:JSON.stringify({username, email, password}),
     })
-      .then((r) => r.json())
-      .then((data) => {
-        console.log(data);
-        
-        localStorage.setItem("token", data.token); 
-        navigate("/login", { replace: true }); 
-      })
+     .then((r) => {
+  if (!r.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return r.json();
+})
       .catch((error) => {
         console.error(error);
       });
