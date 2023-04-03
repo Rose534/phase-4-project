@@ -1,8 +1,8 @@
 
-User.create(username: "john_doe", email: "john@gmail.com", password: "password")
-User.create(username: "jane_doe", email: "jane@gmail.com", password: "password")
-User.create(username: "alex_jay", email: "alex@gmail.com", password: "password")
-User.create(username: "yurub", email: "yurub@gmail.com", password: "password")
+user1 = User.create(username: "john_doe", email: "john@gmail.com", password: "password")
+user2 = User.create(username: "jane_doe", email: "jane@gmail.com", password: "password")
+user3 = User.create(username: "alex_jay", email: "alex@gmail.com", password: "password")
+user4 = User.create(username: "yurub", email: "yurub@gmail.com", password: "password")
 # Create some products
 iphone = Product.create(name: "iPhone", description: "Smartphone from Apple", price: 999, image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRzqgBAx8FkgTrVmHWR2jhUVNyuEL0-WZ637G-GC564YyBCwv9sVuDtJ1aYVVJFxNy4PhWZL3PGAw&usqp=CAc")
 macbook = Product.create(name: "MacBook Pro", description: "Laptop from Apple", price: 1999, image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTbn3HGc9LOFIszXn3U-bv8c2Q5xmHcahG2xSKHd3KD12sS-e5ImhAHhq-oUnLWceYSfaEdgkt_jA&usqp=CAc")

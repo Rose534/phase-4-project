@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from "./Navbar";
 
-
 const Account = () => {
   const [products, setProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null);
@@ -12,10 +11,9 @@ const Account = () => {
     price: "",
     image: ""
   });
-  
 
   useEffect(() => {
-    fetch('http://localhost:3000/product')
+    fetch('https://clicky-h5gz.onrender.com/product')
       .then(response => response.json())
       .then(data => setProducts(data.data))
       .catch(error => console.error(error));
@@ -31,7 +29,7 @@ const Account = () => {
 
   const handleNewProductSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/product`, {
+    fetch(`https://clicky-h5gz.onrender.com/product`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +49,6 @@ const Account = () => {
       })
       .catch(error => console.error(error));
   };
-  
 
   const handleHover = (productId) => {
     setHoveredProductId(productId);
@@ -60,7 +57,7 @@ const Account = () => {
   const handleUpdate = (productId) => {
     const updatedProduct = prompt('Enter the updated product name:');
     if (updatedProduct) {
-      fetch(`http://localhost:3000/product/${productId}`, {
+      fetch(`https://clicky-h5gz.onrender.com/product/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -69,7 +66,6 @@ const Account = () => {
       })
       .then(response => response.json())
       .then(data => {
-       
         const updatedProducts = products.map(product => {
           if (product.id === productId) {
             return data.data;
@@ -81,21 +77,20 @@ const Account = () => {
       .catch(error => console.error(error));
     }
   };
-  
 
   const handleDelete = (productId) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
-      fetch(`http://localhost:3000/product/${productId}`, {
+      fetch(`https://clicky-h5gz.onrender.com/product/${productId}`, {
         method: 'DELETE'
       })
       .then(() => {
-        
         const updatedProducts = products.filter(product => product.id !== productId);
         setProducts(updatedProducts);
       })
       .catch(error => console.error(error));
     }
   };
+
 
   return (
     <div id="account">
