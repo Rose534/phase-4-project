@@ -34,25 +34,25 @@ function PasswordReset() {
         console.error(error);
       });
   };
+
   return (
     <div id="reset">
-    <div class="reset-password-form">
-    <h1 class="reset-password-form__title">Password Reset</h1>
-    <form class="reset-password-form__form" onSubmit={handleResetPassword}>
-      <div class="reset-password-form__form-group">
-        <label class="reset-password-form__label" htmlFor="username">Username:</label>
-        <input class="reset-password-form__input" type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+      <div className="reset-password-form">
+        <h1 className="reset-password-form__title">Password Reset</h1>
+        <form className="reset-password-form__form" onSubmit={handleResetPassword}>
+          <div className="reset-password-form__form-group">
+            <label className="reset-password-form__label" htmlFor="username">Username:</label>
+            <input className="reset-password-form__input" type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          </div>
+          <div className="reset-password-form__form-group">
+            <label className="reset-password-form__label" htmlFor="password">New Password:</label>
+            <input className="reset-password-form__input" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+          <button className="reset-password-form__button" type="submit">Reset Password</button>
+        </form>
+        {message && <p className="reset-password-form__message">{message}</p>}
       </div>
-      <div class="reset-password-form__form-group">
-        <label class="reset-password-form__label" htmlFor="password">New Password:</label>
-        <input class="reset-password-form__input" type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      </div>
-      <button class="reset-password-form__button" type="submit">Reset Password</button>
-    </form>
-    {message && <p class="reset-password-form__message">{message}</p>}
-  </div>
-  </div>
-  
+    </div>
   );
 }
 
