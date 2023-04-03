@@ -149,7 +149,7 @@ input:focus{
 .category-names p {
   margin: 0;
   padding: 10px 0;
-  cursor: pointer;
+  
 }
 
 .category-names p:hover {

@@ -29,11 +29,11 @@ function Category() {
       <div id="sidebar">
         <h3>Category</h3>
         <div className="category-names">
-          <p onClick={() => handleCategoryClick('All')}>All</p>
-          <p onClick={() => handleCategoryClick('kitchen')}>kitchen</p>
-          <p onClick={() => handleCategoryClick('food')}>food</p>
-          <p onClick={() => handleCategoryClick('Electronics')}>Electronics</p>
-          <p onClick={() => handleCategoryClick('fashion')}>fashion</p>
+          <p>All</p>
+          <p>Kitchen</p>
+          <p>Food</p>
+          <p>Electronics</p>
+          <p>Fashion</p>
         </div>
       </div>
       <div className="product-cards">
