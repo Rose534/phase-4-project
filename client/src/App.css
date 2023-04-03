@@ -6,6 +6,10 @@ body{
   background-color: #f7cb71;
 }
 
+#reset{
+  background-color: #DBA63B;
+}
+
 input:focus{
   outline: none;
   
@@ -646,6 +650,4 @@ ul.product-list {
   background-color: #DBA63B;
 }
 
-#reset{
-  background-color: #DBA63B;
-}
+
