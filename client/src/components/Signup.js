@@ -29,6 +29,7 @@ function Signup() {
   };
 
   return (
+    <div id="sign">
     <div className="signup-form">
   
   <form className="signup-form-container" onSubmit={handleSignup}>
@@ -48,6 +49,7 @@ function Signup() {
     <button className="signup-button" type="submit">Signup</button>
     <p>Already have an account? <Link to="/login">Login here</Link></p>
   </form>
+</div>
 </div>
 
   );
