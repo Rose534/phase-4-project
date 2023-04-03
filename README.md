@@ -81,6 +81,38 @@ The front end is deployed in the below link:
 
      https://phase-4-project-ten.vercel.app/
 
+This is how the website should look once you click the link:
+
+
+![Screenshot from 2023-04-03 17-17-42](https://user-images.githubusercontent.com/105820877/229494606-ec5e1412-13fc-4db3-b976-372f893f9093.png)
+
+
+
+After you sign up, you should be directed to this Login page, where you should enter the previous details you entered in the sign up page:
+
+
+![Screenshot from 2023-04-03 17-20-50](https://user-images.githubusercontent.com/105820877/229495230-a632b5ea-1f1d-4e86-b965-b74e7018c499.png)
+
+
+
+After signing in, you will be directed to this homepage below:
+
+
+![Screenshot from 2023-04-03 17-24-31](https://user-images.githubusercontent.com/105820877/229495702-56b490bc-37c1-431b-abae-40f2a37ff611.png)
+
+
+You can navigate to the account section in the navigation bar, which should lead you to this: 
+
+
+![Screenshot from 2023-04-03 17-26-21](https://user-images.githubusercontent.com/105820877/229496086-d3608641-86c0-474d-979d-0d2866164e46.png)
+
+
+
+In this page, you can create, delete or update an existing product:
+
+
+![Screenshot from 2023-04-03 17-28-23](https://user-images.githubusercontent.com/105820877/229496473-7a00693a-a469-49c6-93de-a074fc427691.png)
+
 
 # Authors
 
