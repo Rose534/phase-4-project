@@ -286,15 +286,13 @@ button:hover {
 
 }
 
-.product-list {
+.product-list {  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px; 
-  background-color: #DBA63B;
- 
-}
+  }
 
 .product-list li {
   background-color: #fff;
@@ -357,7 +355,7 @@ ul.product-list {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -480px; 
-  background-color: #DBA63B;
+  
 }
 
 .card {
@@ -571,7 +569,7 @@ ul.product-list {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #DBA63B;;
+  background-color: #DBA63B;
   
 }
 
