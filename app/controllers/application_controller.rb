@@ -3,6 +3,14 @@ class ApplicationController < ActionController::API
 
     rescue_from StandardError, with: :standard_error
 
+    before_action :set_access_control_headers
+
+   def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = 'Content-Type'
+  end
+
     def app_response(message: 'success', status: 200, data: nil)
         render json: {
             message: message,
