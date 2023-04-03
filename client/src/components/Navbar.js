@@ -7,7 +7,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    fetch(`http://localhost:3000/logout`, {
+    fetch(`https://clicky-h5gz.onrender.com/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
