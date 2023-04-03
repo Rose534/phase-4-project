@@ -33,6 +33,7 @@ function Category() {
           <p onClick={() => handleCategoryClick('Electronics')}>Electronics</p>
           <p onClick={() => handleCategoryClick('Fashion')}>Fashion</p>
         </div>
+        
       </div>
       <div className="product-cards">
         {bestSellers.map(product => (

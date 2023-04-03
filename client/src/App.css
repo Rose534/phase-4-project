@@ -150,6 +150,10 @@ input:focus{
   margin-top: 50px;
 }
 
+#category{
+  background-color: #DBA63B;
+}
+
 .category-names p {
   margin: 0;
   padding: 10px 0;
