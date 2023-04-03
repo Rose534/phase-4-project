@@ -55,6 +55,10 @@ To install all the gems, run
 
      bundle install
 
+To run the rails server, run
+
+     rails s
+
 # Frontend
 
 The front end to this repo is stored under `client` 
@@ -67,15 +71,8 @@ To run the server, run
 
    npm start
 
-Then navigate to `http://localhost:3000` to view the website
+Then navigate to `http://localhost:4000` to view the website
 
-To by pass the CORS error, download this CORS extension to your browser
-
-         https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
-
-Once downloaded click on the extension and press the `off` on the lower left side on the screen.
-
-Once you have clicked on the link, be sure to login first
 
 # Authors
 
