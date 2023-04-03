@@ -151,7 +151,7 @@ input:focus{
 }
 
 #category{
-  background-color: #f4b941;
+  background-color: #DBA63B;
 }
 
 .category-names p {
@@ -456,11 +456,7 @@ ul.product-list {
   font-size: 16px;
 }
 
-#reset{
-  background-color: #DBA63B;
-}
-
-.reset-password-form {
+#reset .reset-password-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -476,6 +472,11 @@ ul.product-list {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#reset {
+  background-color: #DBA63B;
+}
+
 
 
 .reset-password-form__title {
