@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
@@ -27,12 +27,6 @@ function Signup() {
         console.error(error);
       });
   };
-
-  useEffect(() => {
-    if (!localStorage.getItem('token')) {
-      navigate('/login', { replace: true });
-    }
-  }, [navigate]);
 
   return (
     <div id="sign">
