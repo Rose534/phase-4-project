@@ -116,7 +116,15 @@ In this page, you can create, delete or update an existing product:
 
 # Authors
 
-This project was contributed to by: -Rose Kiragu
+This project was contributed to by: 
+
+-Rose Kiragu (https://github.com/Rose534)
+
+-Levy kipkoech (https://github.com/levykipkoech)
+
+-Yurub (https://github.com/yurubiftin)
+
+-Sheema Shamil (https://github.com/sheema-shamil)
 
 # License
 
